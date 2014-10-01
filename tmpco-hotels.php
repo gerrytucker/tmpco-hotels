@@ -159,4 +159,4 @@ if ( ! class_exists( 'tmpcoHotels' ) ) {
 
 }
 
-$tmpcoHotels = new tmpcoHotels();
+$tmpcohotels = new tmpcoHotels();
