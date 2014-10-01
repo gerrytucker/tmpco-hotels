@@ -10,25 +10,10 @@
 	font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
-	font-family: 'tmpco-hotels';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-.icon-bellhop:before {
-	content: "\e600";
-}
-
 #adminmenu .menu-icon-hotel div.wp-menu-image:before {
 	font-family: 'tmpco-hotels';
 	content: '\e600';
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
