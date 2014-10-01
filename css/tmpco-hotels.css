@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'tmpco-hotels';
-	src: url('fonts/tmpco-hotels.eot');
+	src: url('../fonts/tmpco-hotels.eot');
 }
 @font-face {
 	font-family: 'tmpco-hotels';
@@ -26,4 +26,9 @@
 
 .icon-bellhop:before {
 	content: "\e600";
+}
+
+#adminmenu .menu-icon-hotel div.wp-menu-image:before {
+	font-family: 'tmpco-hotels';
+	content: '\e600';
 }
