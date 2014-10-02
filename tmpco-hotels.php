@@ -3,24 +3,36 @@
  * Plugin Name: tMPCo Hotels
  * Plugin URI:
  * Description: The Hotel Management WordPress plugin for the Mayfair Printing Co.
- * Version: 1.0
+ * Version: 1.1.13
  * Author: Gerry Tucker
  * Author URI: http://gerrytucker.co.uk/
  * Text-Domain: tmpco-hotels
  * GitHub Plugin URI:
  */
 
-if ( ! class_exists( 'tmpcoHotels' ) ) {
+if ( ! class_exists( 'TMPCOHotels' ) ) {
 
-	class tmpcoHotels {
+	class TMPCOHotels {
 
 		/**
 		 * Initialize the class
 		 */
 		public function __construct() {
 
+			// Add hooks
+			add_action( 'init', array( &$this, 'hotels_custom_post_type'), 0 );
+
+			if ( is_admin() ) {
+				add_action( 'admin_enqueue_scripts', array( &$this, 'hotels_admin_enqueue_scripts') );
+				add_action( 'add_meta_boxes', array( &$this, 'hotels_add_meta_box' );
+				add_action( 'save_post', array( &$this, 'hotels_save_meta_box_data' ) );
+			}
+
 		}
 
+		/**
+		 * Enqueue styles
+		 */
 		public function hotels_admin_enqueue_scripts() {
 
 			wp_register_style( 'hotels_admin_style', plugins_url( 'css/tmpco-hotels.css', __FILE__ ) );
@@ -148,15 +160,8 @@ if ( ! class_exists( 'tmpcoHotels' ) ) {
 
 		}
 
-
-		// Add hooks
-		add_action( 'init', array( &$this, 'hotels_custom_post_type'), 0 );
-		add_action( 'admin_enqueue_scripts', array( &$this, 'hotels_admin_enqueue_scripts') );
-		add_action( 'add_meta_boxes', array( &$this, 'hotels_add_meta_box' );
-		add_action( 'save_post', array( &$this, 'hotels_save_meta_box_data' ) );
-
 	}
 
 }
 
-$tmpcohotels = new tmpcoHotels();
+$tmpcohotels = new TMPCOHotels();
