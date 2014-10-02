@@ -3,7 +3,7 @@
  * Plugin Name: tMPCo Hotels
  * Plugin URI: https://github.com/gerrytucker/tmpco-hotels
  * Description: The Hotel Management WordPress plugin for the Mayfair Printing Co.
- * Version: 1.1.14
+ * Version: 1.1.15
  * Author: Gerry Tucker
  * Author URI: http://gerrytucker.co.uk/
  * Text-Domain: tmpco-hotels
@@ -100,7 +100,7 @@ if ( ! class_exists( 'TMPCOHotels' ) ) {
 			add_meta_box(
 				'hotel_meta_box_id',
 				__('Hotel Map URL', 'tmpco-hotels'),
-				'hotels_add_meta_box_callback',
+				array( &$this, 'hotels_add_meta_box_callback' ),
 				'hotel'
 			);
 
