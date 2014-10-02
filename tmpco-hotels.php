@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name: tMPCo Hotels
- * Plugin URI:
+ * Plugin URI: https://github.com/gerrytucker/tmpco-hotels
  * Description: The Hotel Management WordPress plugin for the Mayfair Printing Co.
- * Version: 1.1.13
+ * Version: 1.1.14
  * Author: Gerry Tucker
  * Author URI: http://gerrytucker.co.uk/
  * Text-Domain: tmpco-hotels
- * GitHub Plugin URI:
+ * GitHub Plugin URI: https://github.com/gerrytucker/tmpco-hotels
  */
 
 if ( ! class_exists( 'TMPCOHotels' ) ) {
@@ -24,7 +24,7 @@ if ( ! class_exists( 'TMPCOHotels' ) ) {
 
 			if ( is_admin() ) {
 				add_action( 'admin_enqueue_scripts', array( &$this, 'hotels_admin_enqueue_scripts') );
-				add_action( 'add_meta_boxes', array( &$this, 'hotels_add_meta_box' );
+				add_action( 'add_meta_boxes', array( &$this, 'hotels_add_meta_box' ) );
 				add_action( 'save_post', array( &$this, 'hotels_save_meta_box_data' ) );
 			}
 
@@ -84,6 +84,7 @@ if ( ! class_exists( 'TMPCOHotels' ) ) {
 				'publicly_queryable'  => true,
 				'rewrite'             => $rewrite,
 				'capability_type'     => 'page',
+				'menu_icon' => ''
 			);
 			register_post_type( 'hotel', $args );
 
