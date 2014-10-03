@@ -61,7 +61,7 @@ if ( ! class_exists( 'TMPCOHotels' ) ) {
 				'not_found_in_trash'  => __( 'Not found in Trash', 'tmpco-hotels' ),
 			);
 			$rewrite = array(
-				'slug'                => 'post_type',
+				'slug'                => 'hotel',
 				'with_front'          => true,
 				'pages'               => true,
 				'feeds'               => false,
