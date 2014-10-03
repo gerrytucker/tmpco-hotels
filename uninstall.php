@@ -8,7 +8,7 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) )
 	exit;
 
 // Delete Hotel URI meta key from all posts
-delete_post_meta_by_key( '_hotel_uri' );
+delete_post_meta_by_key( '_tmpco_hotel_uri' );
 
 // Delete Hotel custom post type posts
 global $wpdb;
